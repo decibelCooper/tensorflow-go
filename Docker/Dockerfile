@@ -39,11 +39,8 @@ RUN sudo pacman -S --noconfirm \
 RUN go get golang.org/x/tools/cmd/goimports && \
 	go get -tags zmq_4_x github.com/gopherds/gophernotes && \
 	mkdir -p ~/.local/share/jupyter/kernels/gophernotes && \
-	cp -r $GOPATH/src/github.com/gopherds/gophernotes/kernel/* ~/.local/share/jupyter/kernels/gophernotes
+	cp -r $GOPATH/src/github.com/gopherds/gophernotes/kernel/* ~/.local/share/jupyter/kernels/gophernotes && \
+	rm -rf /opt/Go/src
 
-RUN go get github.com/tensorflow/tensorflow/tensorflow/go
-
-# Optional tools
-RUN sudo pacman -S --noconfirm \
-	openssh \
-	vim
+RUN go get github.com/tensorflow/tensorflow/tensorflow/go && \
+	rm -rf /opt/Go/src
