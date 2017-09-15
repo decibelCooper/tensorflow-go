@@ -45,4 +45,5 @@ RUN go get golang.org/x/tools/cmd/goimports && \
 	rm -rf /opt/Go/src
 
 RUN go get github.com/tensorflow/tensorflow/tensorflow/go && \
+	go get github.com/tensorflow/tensorflow/tensorflow/go/op && \
 	rm -rf /opt/Go/src
