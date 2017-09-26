@@ -18,6 +18,7 @@ RUN sudo pacman -S --noconfirm \
 	jupyter-notebook \
 	python-numpy \
 	python-tensorflow \
+	tensorboard \
 	tensorflow
 
 RUN sudo printf '#!/bin/bash\njupyter-notebook --ip="*" --no-browser\n' > /usr/bin/jupyter-wrapper && \
